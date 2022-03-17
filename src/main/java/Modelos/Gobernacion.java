@@ -13,5 +13,9 @@ public class Gobernacion {
     private ArrayList <Fundacion> fundacion;
     private ArrayList <CalendarioCharlas> charlas;
     
+    public Gobernacion (){
+        this.fundacion = new ArrayList<Fundacion>();
+        this.charlas = new ArrayList<CalendarioCharlas>();
+    }
     
 }
