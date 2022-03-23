@@ -6,8 +6,8 @@ package Modelos;
 
 /**
  *
- * @author josue
+ * @author Khaal
  */
-public class CalendarioCharlas {
+public class MGobernacion {
     
 }
