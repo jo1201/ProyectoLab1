@@ -1,14 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Modelos;
 
 import Modelos.MFundacion;
-/**
- *
- * @author Khaal
- */
+
 public class MGobernacion {
     private MFundacion fundacion;
 
@@ -23,6 +17,4 @@ public class MGobernacion {
     public MGobernacion(MFundacion fundacion) {
         this.fundacion = fundacion;
     }
-    
-    
 }

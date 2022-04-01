@@ -1,18 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Modelos;
 
-/**
- *
- * @author Khaal
- */
 public class MServicio {
-    private String codigo,nombre,tipo;
+    private String codigo, nombre, tipo;
     private float costo;
     
-    public MServicio(){}
+    public MServicio() {}
+    
+    public MServicio(String codigo, String nombre, String tipo, float costo) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.costo = costo;
+    }
 
     public float getCosto() {
         return costo;
@@ -44,11 +44,5 @@ public class MServicio {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
-    }
-
- 
-    
-    
-    
-    
+    }  
 }

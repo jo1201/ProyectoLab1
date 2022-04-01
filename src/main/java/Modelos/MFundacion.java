@@ -1,20 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Modelos;
 
 import Modelos.MServicio;
+import java.util.ArrayList;
 
-/**
- *
- * @author Khaal
- */
 public class MFundacion {
     private int codigo;
     private String nombre;
-    private MServicio servicio;
+    private ArrayList<MServicio> servicios;
     private String presidente;
+    
+    public MFundacion() {}
+    
+    public MFundacion(int codigo, String nombre, ArrayList<MServicio> servicios, String presidente) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.servicios = servicios;
+        this.presidente = presidente;
+    }
 
     public String getPresidente() {
         return presidente;
@@ -40,20 +43,34 @@ public class MFundacion {
         this.nombre = nombre;
     }
 
-    public MServicio getServicio() {
-        return servicio;
+    public ArrayList<MServicio> getServicios() {
+        return servicios;
     }
 
-    public void setServicio(MServicio servicio) {
-        this.servicio = servicio;
+    public void setServicios(ArrayList<MServicio> servicios) {
+        this.servicios = servicios;
     }
-
-    public MFundacion(int codigo, String nombre, MServicio servicio, String presidente) {
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.servicio = servicio;
-        this.presidente = presidente;
+    
+    public void añadirServicio(MServicio servicio) {
+        this.servicios.add(servicio);
     }
-
-   
+    
+    public void eliminarServicio(String codigoServicio) {
+        int lenght = servicios.size();
+        
+        for(int i = 0; i < lenght; i++) {
+            if(servicios.get(i).getCodigo().equals(codigoServicio)) {
+                servicios.remove(i);
+                break;
+            }
+        }
+    }
+    
+    public MServicio buscarServicio(String codigoServicio) {
+        for(MServicio servicioActual : servicios) {
+            if(servicioActual.getCodigo().equals(codigoServicio))
+                return servicioActual;
+        }
+        return null;
+    }
 }
