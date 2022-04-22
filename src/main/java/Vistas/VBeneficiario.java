@@ -5,6 +5,7 @@
 package Vistas;
 
 import Generales.Mensajes;
+import Generales.Validacion;
 
 /**
  *
@@ -72,6 +73,9 @@ public class VBeneficiario extends javax.swing.JPanel {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtBuscarKeyPressed(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBuscarKeyTyped(evt);
+            }
         });
         jPanel1.add(txtBuscar);
         txtBuscar.setBounds(70, 20, 230, 40);
@@ -105,24 +109,48 @@ public class VBeneficiario extends javax.swing.JPanel {
         jLabel3.setText("Cedula");
         jPanel2.add(jLabel3);
         jLabel3.setBounds(40, 60, 50, 16);
+
+        txtCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCodigoKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtCodigo);
         txtCodigo.setBounds(100, 50, 270, 30);
 
         jLabel4.setText("Nombre:");
         jPanel2.add(jLabel4);
         jLabel4.setBounds(40, 100, 50, 16);
+
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtNombre);
         txtNombre.setBounds(100, 90, 270, 30);
 
         jLabel5.setText("Apellido:");
         jPanel2.add(jLabel5);
         jLabel5.setBounds(40, 140, 50, 16);
+
+        txtTipo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTipoKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtTipo);
         txtTipo.setBounds(100, 130, 270, 30);
 
         jLabel6.setText("Edad:");
         jPanel2.add(jLabel6);
         jLabel6.setBounds(40, 180, 60, 16);
+
+        txtCosto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCostoKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtCosto);
         txtCosto.setBounds(100, 170, 270, 30);
 
@@ -189,6 +217,26 @@ public class VBeneficiario extends javax.swing.JPanel {
     private void btnConsularKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnConsularKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnConsularKeyPressed
+
+    private void txtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyTyped
+        Validacion.validarAlfanumerico(evt);
+    }//GEN-LAST:event_txtBuscarKeyTyped
+
+    private void txtCodigoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoKeyTyped
+        Validacion.validarAlfanumerico(evt);
+    }//GEN-LAST:event_txtCodigoKeyTyped
+
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+        Validacion.validarLetra(evt);
+    }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void txtTipoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTipoKeyTyped
+        Validacion.validarLetra(evt);
+    }//GEN-LAST:event_txtTipoKeyTyped
+
+    private void txtCostoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCostoKeyTyped
+        Validacion.validarEntero(evt);
+    }//GEN-LAST:event_txtCostoKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
