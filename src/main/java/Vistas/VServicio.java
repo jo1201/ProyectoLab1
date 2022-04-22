@@ -8,6 +8,8 @@ import Controladores.CServicio;
 import Generales.Mensajes;
 import java.awt.event.ActionListener;
 import javax.swing.JTextField;
+import Generales.Validacion;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -37,7 +39,7 @@ public class VServicio extends javax.swing.JPanel {
         txtCodigo.setText("");
         getTxtNombre().setText("");
         txtCosto.setText("");
-        getTxtTipo().setText("");
+        getTxtTipo().setSelectedIndex(0);
     }
     
     public void registroEnc(){
@@ -93,7 +95,7 @@ public class VServicio extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txtTipo = new javax.swing.JTextField();
+        txtTipo = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         txtCosto = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -157,24 +159,44 @@ public class VServicio extends javax.swing.JPanel {
         jLabel3.setText("Codigo:");
         jPanel2.add(jLabel3);
         jLabel3.setBounds(40, 60, 50, 16);
+
+        txtCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCodigoKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtCodigo);
         txtCodigo.setBounds(100, 50, 270, 30);
 
         jLabel4.setText("Nombre:");
         jPanel2.add(jLabel4);
         jLabel4.setBounds(40, 100, 50, 16);
+
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtNombre);
         txtNombre.setBounds(100, 90, 270, 30);
 
         jLabel5.setText("Tipo:");
         jPanel2.add(jLabel5);
         jLabel5.setBounds(40, 140, 27, 16);
+
+        txtTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Médico", "Donación" }));
         jPanel2.add(txtTipo);
-        txtTipo.setBounds(100, 130, 270, 30);
+        txtTipo.setBounds(100, 132, 270, 30);
 
         jLabel6.setText("Costo:");
         jPanel2.add(jLabel6);
-        jLabel6.setBounds(40, 180, 36, 16);
+        jLabel6.setBounds(40, 180, 34, 16);
+
+        txtCosto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCostoKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtCosto);
         txtCosto.setBounds(100, 170, 270, 30);
 
@@ -242,6 +264,18 @@ public class VServicio extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnConsularActionPerformed
 
+    private void txtCodigoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoKeyTyped
+        Validacion.validarAlfanumerico(evt);
+    }//GEN-LAST:event_txtCodigoKeyTyped
+
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+        Validacion.validarLetra(evt);
+    }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void txtCostoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCostoKeyTyped
+        Validacion.validarDecimal(evt, txtCosto);
+    }//GEN-LAST:event_txtCostoKeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
@@ -265,7 +299,7 @@ public class VServicio extends javax.swing.JPanel {
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtCosto;
     private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtTipo;
+    private javax.swing.JComboBox<String> txtTipo;
     // End of variables declaration//GEN-END:variables
 
     public JTextField getTxtBuscar() {
@@ -300,11 +334,11 @@ public class VServicio extends javax.swing.JPanel {
         this.txtNombre = txtNombre;
     }
 
-    public JTextField getTxtTipo() {
+    public JComboBox getTxtTipo() {
         return txtTipo;
     }
 
-    public void setTxtTipo(JTextField txtTipo) {
+    public void setTxtTipo(JComboBox txtTipo) {
         this.txtTipo = txtTipo;
     }
 

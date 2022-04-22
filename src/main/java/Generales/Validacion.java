@@ -44,7 +44,7 @@ public class Validacion {
     }
     
     public static void validarLetra(KeyEvent e){
-        if(!Character.isLetter(e.getKeyChar()))
+        if(!Character.isLetter(e.getKeyChar()) && e.getKeyChar() != ' ')
             e.consume();
     }
     
