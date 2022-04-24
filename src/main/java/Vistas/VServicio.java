@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
+
 package Vistas;
 
 import Controladores.CServicio;
@@ -11,10 +8,6 @@ import javax.swing.JTextField;
 import Generales.Validacion;
 import javax.swing.JComboBox;
 
-/**
- *
- * @author Khaal
- */
 public class VServicio extends javax.swing.JPanel {
     private CServicio cserv;
     private Mensajes msj;
@@ -29,7 +22,6 @@ public class VServicio extends javax.swing.JPanel {
         txtCodigo.setEditable(false);
         getTxtNombre().setEditable(false);
         txtCosto.setEditable(false);
-        getTxtTipo().setEditable(false);
         btnConsular.setEnabled(true);
         btnAgregar.setEnabled(false);
         btnEliminar.setEnabled(false);
@@ -39,7 +31,6 @@ public class VServicio extends javax.swing.JPanel {
         txtCodigo.setText("");
         getTxtNombre().setText("");
         txtCosto.setText("");
-        getTxtTipo().setSelectedIndex(0);
     }
     
     public void registroEnc(){
@@ -47,7 +38,6 @@ public class VServicio extends javax.swing.JPanel {
         txtCodigo.setEditable(false);
         getTxtNombre().setEditable(true);
         txtCosto.setEditable(true);
-        getTxtTipo().setEditable(false);
         btnConsular.setEnabled(true);
         btnAgregar.setEnabled(false);
         btnEliminar.setEnabled(true);
@@ -61,7 +51,6 @@ public class VServicio extends javax.swing.JPanel {
         txtCodigo.setEditable(false);
         getTxtNombre().setEditable(true);
         txtCosto.setEditable(true);
-        getTxtTipo().setEditable(true);
         btnConsular.setEnabled(false);
         btnAgregar.setEnabled(true);
         btnEliminar.setEnabled(false);
@@ -94,8 +83,6 @@ public class VServicio extends javax.swing.JPanel {
         txtCodigo = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txtTipo = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         txtCosto = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -170,7 +157,7 @@ public class VServicio extends javax.swing.JPanel {
 
         jLabel4.setText("Nombre:");
         jPanel2.add(jLabel4);
-        jLabel4.setBounds(40, 100, 50, 16);
+        jLabel4.setBounds(40, 120, 50, 16);
 
         txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -178,15 +165,7 @@ public class VServicio extends javax.swing.JPanel {
             }
         });
         jPanel2.add(txtNombre);
-        txtNombre.setBounds(100, 90, 270, 30);
-
-        jLabel5.setText("Tipo:");
-        jPanel2.add(jLabel5);
-        jLabel5.setBounds(40, 140, 27, 16);
-
-        txtTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Médico", "Donación" }));
-        jPanel2.add(txtTipo);
-        txtTipo.setBounds(100, 132, 270, 30);
+        txtNombre.setBounds(100, 110, 270, 30);
 
         jLabel6.setText("Costo:");
         jPanel2.add(jLabel6);
@@ -288,7 +267,6 @@ public class VServicio extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -299,7 +277,6 @@ public class VServicio extends javax.swing.JPanel {
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtCosto;
     private javax.swing.JTextField txtNombre;
-    private javax.swing.JComboBox<String> txtTipo;
     // End of variables declaration//GEN-END:variables
 
     public JTextField getTxtBuscar() {
@@ -333,20 +310,6 @@ public class VServicio extends javax.swing.JPanel {
     public void setTxtNombre(JTextField txtNombre) {
         this.txtNombre = txtNombre;
     }
-
-    public JComboBox getTxtTipo() {
-        return txtTipo;
-    }
-
-    public void setTxtTipo(JComboBox txtTipo) {
-        this.txtTipo = txtTipo;
-    }
-
-
-
-
-
-
 
 }
 

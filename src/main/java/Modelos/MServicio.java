@@ -2,19 +2,18 @@
 package Modelos;
 
 public class MServicio {
-    private String codigo, nombre, tipo;
-    private float costo;
+    private String codigo, nombre;
+    private double costo;
     
     public MServicio() {}
     
-    public MServicio(String codigo, String nombre, String tipo, float costo) {
+    public MServicio(String codigo, String nombre, double costo) {
         this.codigo = codigo;
         this.nombre = nombre;
-        this.tipo = tipo;
         this.costo = costo;
     }
 
-    public float getCosto() {
+    public double getCosto() {
         return costo;
     }
 
@@ -37,12 +36,5 @@ public class MServicio {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }  
+    
 }
