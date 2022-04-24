@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class ConexionDB extends DatosDB {
     
-    private Connection con;
+    protected Connection con;
     
     public ConexionDB() {
         con = null;
