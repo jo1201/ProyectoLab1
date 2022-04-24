@@ -22,7 +22,7 @@ public class CServicio implements ActionListener {
     private CMenu cmenu;
     private MServicio mserv;
     public CServicio(CMenu cmenu){
-        vserv = new VServicio(cmenu.getVMenu(),false,null)
+        //vserv = new VServicio(cmenu.getVMenu(),false,null)
     }
     
     @Override
