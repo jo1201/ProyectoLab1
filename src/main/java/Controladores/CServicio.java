@@ -3,14 +3,14 @@ package Controladores;
 
 import Generales.Mensajes;
 import Modelos.MServicio;
-import Vistas.ViServicio;
+import Vistas.VServicio;
 import Modelos.CRUD.ServicioCRUD;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class CServicio implements ActionListener {
     
-    private ViServicio vista;
+    private VServicio vista;
     private MServicio modelo;
     private ServicioCRUD crud;
     
@@ -18,7 +18,7 @@ public class CServicio implements ActionListener {
         //vserv = new VServicio(cmenu.getVMenu(),false,null)
     }
     
-    public CServicio(ViServicio vista, MServicio modelo) {
+    public CServicio(VServicio vista, MServicio modelo) {
         this.vista = vista;
         this.modelo = modelo;
         this.crud = new ServicioCRUD();
